@@ -1,0 +1,38 @@
+.course-card {
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 12px;
+  padding: 22px;
+  max-width: 400px;
+  border: 8px;
+  box-shadow: 0 1px 6px #ccc;
+  text-transform: capitalize;
+}
+
+.cover {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 60px;
+  margin-right: 2rem;
+}
+.cover > img {
+  object-fit: cover;
+  width: inherit;
+  height: inherit;
+}
+.details .info {
+  display: none;
+}
+
+.details .actions button {
+  border: none;
+  outline: none;
+  padding: 8px 22px;
+  background-color: darkorange;
+  color: white;
+  border-radius: 30px;
+  text-transform: capitalize;
+}

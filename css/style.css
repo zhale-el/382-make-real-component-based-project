@@ -4,31 +4,3 @@
   align-items: center;
   margin: 22px 0;
 }
-
-.course-card {
-  font-family: sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 12px;
-  padding: 22px;
-  max-width: 400px;
-  border: 8px;
-  box-shadow: 0 1px 6px #ccc;
-}
-
-.cover {
-  width: 120px;
-  height: 120px;
-  overflow: hidden;
-  border-radius: 60px;
-  margin-right: 2rem;
-}
-.cover > img {
-  object-fit: cover;
-  width: inherit;
-  height: inherit;
-}
-.details .info {
-  display: none;
-}
