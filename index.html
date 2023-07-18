@@ -9,10 +9,22 @@
   </head>
   <body>
     <site-header header-title="zhale"></site-header>
-    <div class="course-container"></div>
-    <site-course></site-course>
-    <site-course></site-course>
-    <site-course></site-course>
+    <div class="course-container">
+      <site-course title="js course" cover="img/js.png">
+        <span slot="students">3000</span>
+        <span slot="teacher">elmi</span>
+      </site-course>
+
+      <site-course title="React course" cover="img/reactjs.png">
+        <span slot="students">6000</span>
+        <span slot="teacher">zhale</span>
+      </site-course>
+
+      <site-course title="cr js" cover="img/cr-projects.png">
+        <span slot="students">9000</span>
+        <span slot="teacher">maryam</span>
+      </site-course>
+    </div>
 
     <script type="module" src="./js/script.js"></script>
   </body>

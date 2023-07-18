@@ -4,13 +4,13 @@ template.innerHTML = `
 <link rel="stylesheet" href="../components/course/course.css">
 <div class="course-card">
 <div class="cover">
-  <img src="./img/js.png" alt="" />
+  <img src="" alt="" />
 </div>
 <div class="details">
-  <h2>js course</h2>
+  <h2>e</h2>
   <div class="info">
-    <p>students:3000</p>
-    <p>teacher:zhale</p>
+    <p>students:<slot name='students'></slot></p>
+    <p>teacher:<slot name='teacher'></slot></p>
   </div>
   <div class="actions">
     <button id="register">register</button>
@@ -26,9 +26,17 @@ class course extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
-  connectedCallback() {}
+  connectedCallback() {
+    this.shadowRoot.querySelector(".details h2").innerHTML =
+      this.getAttribute("title");
+    this.shadowRoot
+      .querySelector("img")
+      .setAttribute("src", this.getAttribute("cover"));
+  }
 
-  static observedAttributes() {}
+  static observedAttributes() {
+    return ["title", "cover"];
+  }
 }
 
 export { course };
