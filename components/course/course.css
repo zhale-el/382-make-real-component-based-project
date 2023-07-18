@@ -24,7 +24,7 @@
   height: inherit;
 }
 .details .info {
-  display: block;
+  display: none;
 }
 
 .details .actions button {

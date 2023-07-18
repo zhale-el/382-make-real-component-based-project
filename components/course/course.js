@@ -23,9 +23,25 @@ template.innerHTML = `
 class course extends HTMLElement {
   constructor() {
     super();
+    this.toggleInfo = false;
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
+
+  register(comp) {
+    alert(`You register in course${comp.getAttribute("title")}`);
+  }
+
+  changeToggle = () => {
+    this.toggleInfo = !this.toggleInfo;
+    console.log(this);
+    this.shadowRoot.querySelector(".info").style.display = this.toggleInfo
+      ? "block"
+      : "none";
+    this.shadowRoot.querySelector("#toggle").innerHTML = this.toggleInfo
+      ? "Hide details"
+      : "Show details";
+  };
   connectedCallback() {
     const h2 = this.shadowRoot.querySelector(".details h2");
     h2.innerHTML = this.getAttribute("title");
@@ -33,6 +49,13 @@ class course extends HTMLElement {
     this.shadowRoot
       .querySelector("img")
       .setAttribute("src", this.getAttribute("cover"));
+
+    this.shadowRoot.querySelector("#register").addEventListener("click", () => {
+      this.register(this);
+    });
+    this.shadowRoot
+      .querySelector("#toggle")
+      .addEventListener("click", this.changeToggle);
   }
 
   static observedAttributes() {
