@@ -7,7 +7,7 @@ template.innerHTML = `
   <img src="" alt="" />
 </div>
 <div class="details">
-  <h2>e</h2>
+  <h2></h2>
   <div class="info">
     <p>students:<slot name='students'></slot></p>
     <p>teacher:<slot name='teacher'></slot></p>
@@ -27,8 +27,9 @@ class course extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
   connectedCallback() {
-    this.shadowRoot.querySelector(".details h2").innerHTML =
-      this.getAttribute("title");
+    const h2 = this.shadowRoot.querySelector(".details h2");
+    h2.innerHTML = this.getAttribute("title");
+
     this.shadowRoot
       .querySelector("img")
       .setAttribute("src", this.getAttribute("cover"));
